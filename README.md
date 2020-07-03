@@ -15,14 +15,17 @@ Include Automation of:
 ## Continous Integration:
 - CI is a software development practice in which developers regularly merge thier code changes in to central repository after which automated build and tests are run.
 - Key goal of CI are to find and address bugs quicker,improve software quality and reduce the time to validate , release new software updates.
-- Here code from source(git/codecommit) is pu
+- Here code from source(git/codecommit) is pulled and build in build-stage using jenkins.
 
 ## Continous Delivery:
 - CD is a software development practice where code changes are automatically build,tested and code changes are prepared for production.
 - Actually this deployment to production(transistion from tested-staging-environment to production environment) involves manual step(manual approval or invlovement)
+- Here code is pulled from source(git), build and tested ,deployed into production after manaul approval.
 
 ## Continous Deployment:
 - If application life cycle is fully automated i.e, even transition i above Continous delivery is automated , then that is contionus as continous deployment.
+- Here code is pulled from source(git), build and tested ,deployed into production automatically.
+
 
 ## image to show application life cycle rule and diffrentiate CI/CD:
 
