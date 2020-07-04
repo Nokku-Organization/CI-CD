@@ -151,6 +151,12 @@ $ git pull origin master
 
 
 
+## Additional Content:
+- .gitignore
+- git reflog //reference logging
+- git reset --hard //to delete the changes after committed
+- git reset --soft //to delete the changes before committed
+
 
 
 ## There are three areas:
