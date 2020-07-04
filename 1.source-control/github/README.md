@@ -60,6 +60,46 @@ Cool Tip: Create a new Git branch and checkout in one command! Read More →
  reference: https://www.shellhacks.com/git-config-username-password-store-credentials/
  
  
+ Using ssh also you can access git
+ $ssh-keygen
+ $cat ~/.ssh/id_rsa.pub
+ #copy the above content and place in github account (drop down menu ->settings - >SSH and GPG keys->New SSh Key(tiitle-any))
+ 
+ $git clone git@github.com:Nokku-Organization/CI-CD.git
+- use ssh link to clone the git-path
+
+
+- 2 ways of working with git
+2)or you can create entire new repo and work on
+1)you can clone it via fit-url ,with specific branch and make relaevant changes
+
+For working with new-repo, above installion and configuration steps need to be taken care.
+Objectives
+- Initialise a 'webapi' repository
+- Create a README.md file with contents of "NEw development project-1"
+- Add the file to 
+- commit the file with commit message
+- Finally push your changes to github
+
+
+#detailed analysis of happening at beackend 
+
+
+
+branching and merging with git source contraol:
+- Using the abilty to branch the repo and make changes off the mainline is the biggest advantage pf using git
+- However eventually that branch will need to rejoin the master branch and you will need to perform merge.:
+
+Objective 
+- create a fixreadme branch
+- correct the README.md file 
+- Merge the correct README,md file into master branch
+
+
+ Sometimes its better to generate pull request (for review )to master branch from current branch instaed of directly merging
+ 
+
+
 
 
 
