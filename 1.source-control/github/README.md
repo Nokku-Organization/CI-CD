@@ -1,3 +1,20 @@
+## GIT
+- Git is a open-source-tool,version control which doesn't give UI
+- But Github,codecommit,bitbucket can be taken as UI services built on Git
+- Free and open-source distributed version control system.
+- Supports non linear distributed workflows
+- Provide data assurance for developing software
+- Created by Linux Torvalds, creator of Linux in 2005
+
+## Github
+- Code hosting platform for collabaration and version control
+- Built on Git
+
+We need to install git for using github
+
+
+
+
 ## There are three areas:
  base directory->staging-area(like a box, so we add to box by 'git add' command. we can change those changes done in this area)->permenatant storage(.git,like 
  a mail. After packing in a box we can send a mail.once sent to this stage changes can't be reverted.'git commit -m "message-log"' command can be used to push 
