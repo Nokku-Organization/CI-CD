@@ -1,0 +1,124 @@
+
+[ec2-user@ip-0-0-0-0]$ sudo yum update -y
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                                                            | 2.1 kB  00:00:00
+amzn-updates                                                                                                         | 3.8 kB  00:00:00
+Resolving Dependencies
+--> Running transaction check
+---> Package bash.x86_64 0:4.2.46-28.37.amzn1 will be updated
+---> Package bash.x86_64 0:4.2.46-34.43.amzn1 will be an update
+---> Package initscripts.x86_64 0:9.03.58-1.39.amzn1 will be updated
+---> Package initscripts.x86_64 0:9.03.58-1.40.amzn1 will be an update
+---> Package libcgroup.x86_64 0:0.40.rc1-5.11.amzn1 will be updated
+---> Package libcgroup.x86_64 0:0.40.rc1-5.15.amzn1 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================
+ Package                         Arch                       Version                                  Repository                        Size
+============================================================================================================================================
+Updating:
+ bash                            x86_64                     4.2.46-34.43.amzn1                       amzn-updates                     1.4 M
+ initscripts                     x86_64                     9.03.58-1.40.amzn1                       amzn-updates                     1.8 M
+ libcgroup                       x86_64                     0.40.rc1-5.15.amzn1                      amzn-updates                     146 k
+
+Transaction Summary
+============================================================================================================================================
+Upgrade  3 Packages
+
+Total download size: 3.3 M
+Downloading packages:
+(1/3): libcgroup-0.40.rc1-5.15.amzn1.x86_64.rpm                                                                      | 146 kB  00:00:00
+(2/3): initscripts-9.03.58-1.40.amzn1.x86_64.rpm                                                                     | 1.8 MB  00:00:00
+(3/3): bash-4.2.46-34.43.amzn1.x86_64.rpm                                                                            | 1.4 MB  00:00:01
+--------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                       1.9 MB/s | 3.3 MB  00:00:01
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : bash-4.2.46-34.43.amzn1.x86_64                                                                                           1/6
+  Updating   : initscripts-9.03.58-1.40.amzn1.x86_64                                                                                    2/6
+  Updating   : libcgroup-0.40.rc1-5.15.amzn1.x86_64                                                                                     3/6
+  Cleanup    : libcgroup-0.40.rc1-5.11.amzn1.x86_64                                                                                     4/6
+  Cleanup    : initscripts-9.03.58-1.39.amzn1.x86_64                                                                                    5/6
+  Cleanup    : bash-4.2.46-28.37.amzn1.x86_64                                                                                           6/6
+  Verifying  : initscripts-9.03.58-1.40.amzn1.x86_64                                                                                    1/6
+  Verifying  : libcgroup-0.40.rc1-5.15.amzn1.x86_64                                                                                     2/6
+  Verifying  : bash-4.2.46-34.43.amzn1.x86_64                                                                                           3/6
+  Verifying  : bash-4.2.46-28.37.amzn1.x86_64                                                                                           4/6
+  Verifying  : initscripts-9.03.58-1.39.amzn1.x86_64                                                                                    5/6
+  Verifying  : libcgroup-0.40.rc1-5.11.amzn1.x86_64                                                                                     6/6
+
+Updated:
+  bash.x86_64 0:4.2.46-34.43.amzn1          initscripts.x86_64 0:9.03.58-1.40.amzn1          libcgroup.x86_64 0:0.40.rc1-5.15.amzn1
+
+Complete!
+-------------------------------------------------------------------------------------------------------------------------------------
+[ec2-user@0-0-0-0]$ sudo yum install git
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package git.x86_64 0:2.14.6-1.62.amzn1 will be installed
+--> Processing Dependency: perl-Git = 2.14.6-1.62.amzn1 for package: git-2.14.6-1.62.amzn1.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-2.14.6-1.62.amzn1.x86_64
+--> Processing Dependency: perl(Git::I18N) for package: git-2.14.6-1.62.amzn1.x86_64
+--> Processing Dependency: perl(Git) for package: git-2.14.6-1.62.amzn1.x86_64
+--> Processing Dependency: perl(Error) for package: git-2.14.6-1.62.amzn1.x86_64
+--> Running transaction check
+---> Package perl-Error.noarch 1:0.17020-2.9.amzn1 will be installed
+---> Package perl-Git.noarch 0:2.14.6-1.62.amzn1 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.9.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+============================================================================================================================================
+ Package                             Arch                      Version                                Repository                       Size
+============================================================================================================================================
+Installing:
+ git                                 x86_64                    2.14.6-1.62.amzn1                      amzn-updates                     12 M
+Installing for dependencies:
+ perl-Error                          noarch                    1:0.17020-2.9.amzn1                    amzn-main                        33 k
+ perl-Git                            noarch                    2.14.6-1.62.amzn1                      amzn-updates                     69 k
+ perl-TermReadKey                    x86_64                    2.30-20.9.amzn1                        amzn-main                        33 k
+
+Transaction Summary
+============================================================================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 12 M
+Installed size: 29 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/4): perl-Error-0.17020-2.9.amzn1.noarch.rpm                                                                       |  33 kB  00:00:00
+(2/4): perl-TermReadKey-2.30-20.9.amzn1.x86_64.rpm                                                                   |  33 kB  00:00:00
+(3/4): perl-Git-2.14.6-1.62.amzn1.noarch.rpm                                                                         |  69 kB  00:00:00
+(4/4): git-2.14.6-1.62.amzn1.x86_64.rpm                                                                              |  12 MB  00:00:01
+--------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                       6.9 MB/s |  12 MB  00:00:01
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:perl-Error-0.17020-2.9.amzn1.noarch                                                                                    1/4
+  Installing : perl-TermReadKey-2.30-20.9.amzn1.x86_64                                                                                  2/4
+  Installing : git-2.14.6-1.62.amzn1.x86_64                                                                                             3/4
+  Installing : perl-Git-2.14.6-1.62.amzn1.noarch                                                                                        4/4
+  Verifying  : 1:perl-Error-0.17020-2.9.amzn1.noarch                                                                                    1/4
+  Verifying  : git-2.14.6-1.62.amzn1.x86_64                                                                                             2/4
+  Verifying  : perl-Git-2.14.6-1.62.amzn1.noarch                                                                                        3/4
+  Verifying  : perl-TermReadKey-2.30-20.9.amzn1.x86_64                                                                                  4/4
+
+Installed:
+  git.x86_64 0:2.14.6-1.62.amzn1
+
+Dependency Installed:
+  perl-Error.noarch 1:0.17020-2.9.amzn1        perl-Git.noarch 0:2.14.6-1.62.amzn1        perl-TermReadKey.x86_64 0:2.30-20.9.amzn1
+
+Complete!
+----------------------------------------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git --version
+git version 2.14.5
+
