@@ -1,0 +1,61 @@
+[ec2-user@ip-0-0-0-0]$ git config --global credential.helper store
+-----------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git clone https://github.com/Nokku-Organization/CI-CD.git
+Cloning into 'CI-CD'...
+Username for 'https://github.com': username
+Password for 'https://username@github.com': personal-access-token
+remote: Enumerating objects: 60, done.
+remote: Counting objects: 100% (60/60), done.
+remote: Compressing objects: 100% (50/50), done.
+remote: Total 60 (delta 17), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (60/60), done.
+------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+CI-CD
+-----------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ vim ~/.git-credentials
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Method-2:
+
+[ec2-user@ip-0-0-0-0]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/ec2-user/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/ec2-user/.ssh/id_rsa.
+Your public key has been saved in /home/ec2-user/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:9RAUNi5lzRhZ+AoMYXIFtGC19B5lvJcGZY18bWyM+es ec2-user@ip-172-31-49-232
+The key's randomart image is:
++---[RSA 2048]----+
+|    +oO+.o%%+o * |
+|   . *.+ B*+= = *|
+|      oo+ ++ o + |
+|       .o+.o=   .|
+|        S. +.   .|
+|          .    . |
+|              .  |
+|               E |
+|                 |
++----[SHA256]-----+
+----------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ vim ~/.ssh/id_rsa.pub
+----------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git clone git@github.com:Nokku-Organization/CI-CD.git
+Cloning into 'CI-CD'...
+The authenticity of host 'github.com (40.8.114.3)' can't be established.
+RSA key fingerprint is SHA256:hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh.
+RSA key fingerprint is MD5:hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,40.8.114.3' (RSA) to the list of known hosts.
+remote: Enumerating objects: 60, done.
+remote: Counting objects: 100% (60/60), done.
+remote: Compressing objects: 100% (50/50), done.
+remote: Total 60 (delta 17), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (60/60), 16.04 KiB | 342.00 KiB/s, done.
+Resolving deltas: 100% (17/17), done.
+-------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+CI-CD
