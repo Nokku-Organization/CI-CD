@@ -51,7 +51,7 @@ Config Username and Password for Different Repositories
  Refer full-log file 
  [reference](https://www.shellhacks.com/git-config-username-password-store-credentials/)
  
- ### b)Configure credntials via ssh :
+ ###  b)Configure credentials via ssh :
  $ssh-keygen
  $cat ~/.ssh/id_rsa.pub   //copy the above content and place in github account (drop down menu ->settings - >SSH and GPG keys->New SSh Key(tiitle-any))
  $git clone git@github.com:Nokku-Organization/CI-CD.git  //use ssh link to clone the git-path
@@ -94,7 +94,12 @@ Note:
     - $ gir push origin master
 
 
-#detailed analysis of happening at beackend 
+### Detailed picture of happening at back-side of this whole process:
+- By "git add" command the files will go to staging area 
+- And then by "git commit" command the files will be commited to our local repo.
+- And then by git pull and push commands , our local repo interacts with Central repo(repo present in github account)
+- "git push", this command pushes the changes/files from local repo to central-repo(repo present in github account)
+- While during "git pull", fetching and merging with central repo happens
 
 
 
