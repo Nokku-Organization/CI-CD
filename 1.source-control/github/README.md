@@ -29,8 +29,41 @@ After Installation , credentials need to be configured.
 Two ways to configure credentials i.e, via (username and password) or via ssh key configration
 
 Configure crentials Via Username and password:
-$ git config --global user.name "username"
-$ git config --global user.email "something@gmail.com"
+Run the following command to enable credentials storage in your Git repository:
+$ git config credential.helper store
+To enable credentials storage globally, run:
+$ git config --global credential.helper store
+
+When credentials storage is enabled, the first time you pull or push from the remote Git repository, you will be asked for a username and password, and they will be saved in ~/.git-credentials file.
+
+During the next communications with the remote Git repository you won’t have to provide the username and password.
+
+Each credential in ~/.git-credentials file is stored on its own line as a URL like:
+
+https://<USERNAME>:<PASSWORD>@github.com
+Config Username and Password for Different Repositories
+Sometimes you may need to use different accounts on the same Git server, for example your company’s corporate account on github.com and your private one.
+To be able to configure usernames and passwords for different Git repositories on the same Git server you can enable the useHttpPath option.
+
+By default, Git does not consider the “path” component of an http URL to be worth matching via external helpers. This means that a credential stored for https://example.com/foo.git will also be used for https://example.com/bar.git. If you do want to distinguish these cases, set useHttpPath option to true (source)
+
+Run the following commands to configure Git credentials storage and separate credentials for different repositories on github.com:
+
+$ git config --global credential.helper store
+$ git config --global credential.github.com.useHttpPath true
+The usernames and passwords for different GitHub repositories will be stored in ~/.git-credentials file separately on their own lines:
+
+https://<USERNAME>:<PASSWORD>@github.com/path/to/repo1.git
+https://<USERNAME>:<PASSWORD>@github.com/path/to/repo2.git
+Cool Tip: Create a new Git branch and checkout in one command! Read More →
+ 
+ reference: https://www.shellhacks.com/git-config-username-password-store-credentials/
+ 
+ 
+
+
+
+
 
 
 ## There are three areas:
