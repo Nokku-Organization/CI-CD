@@ -29,8 +29,8 @@ After Installation , credentials need to be configured.
 Two ways to configure credentials i.e, via (username and password) or via ssh key configration
 
 Configure crentials Via Username and password:
-$ git config --global user.name "Emma Paris"
-$ git config --global user.email "eparis@atlassian.com"
+$ git config --global user.name "username"
+$ git config --global user.email "something@gmail.com"
 
 
 ## There are three areas:
