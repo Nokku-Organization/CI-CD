@@ -11,6 +11,19 @@
 - Built on Git
 
 We need to install git for using github
+## Installing git :
+For Amazon-Ec2-Linux :
+- [ec2-user@ip-0-0-0-0]$ sudo yum update -y
+- [ec2-user@ip-0-0-0-0]$ sudo yum install git
+- [ec2-user@ip-0-0-0-0]$ git --version
+
+For Debian/ubuntu :
+$ sudo apt-get update
+$ sudo apt-get install git
+
+Refer the above file for log.
+official-reference: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
 
 
 
