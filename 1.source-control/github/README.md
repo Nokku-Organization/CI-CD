@@ -10,146 +10,133 @@
 - Code hosting platform for collabaration and version control
 - Built on Git
 
-We need to install git for using github
+## We need to install git for using github
 ## Installing git :
-For Amazon-Ec2-Linux :
-- [ec2-user@ip-0-0-0-0]$ sudo yum update -y
-- [ec2-user@ip-0-0-0-0]$ sudo yum install git
-- [ec2-user@ip-0-0-0-0]$ git --version
+### For Amazon-Ec2-Linux :
+    - [ec2-user@ip-0-0-0-0]$ sudo yum update -y
+    - [ec2-user@ip-0-0-0-0]$ sudo yum install git
+    - [ec2-user@ip-0-0-0-0]$ git --version
 
-For Debian/ubuntu :
-$ sudo apt-get update
-$ sudo apt-get install git
+### For Debian/ubuntu :
+    $ sudo apt-get update
+    $ sudo apt-get install git
 
-Refer the above file for log.( https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/installing-git-ec2-linux.txt )
-official-reference: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+- Refer the above file for log.( https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/installing-git-ec2-linux.txt )
+- official-reference: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 
-After Installation , credentials need to be configured.
-Two ways to configure credentials i.e, via (username and password) or via ssh key configration
+## After Installation , credentials need to be configured.
+- Two ways to configure credentials i.e, via (username and password) or via ssh key configration
 
-Configure crentials Via Username and password:
-Run the following command to enable credentials storage in your Git repository:
-$ git config credential.helper store
-To enable credentials storage globally, run:
-$ git config --global credential.helper store
+### a)Configure credntials via Username and password:
+    $ git config credential.helper store //Run the following command to enable credentials storage in your Git repository
+    $ git config --global credential.helper store //To enable credentials storage globally, run
 
-When credentials storage is enabled, the first time you pull or push from the remote Git repository, you will be asked for a username and password, and they will be saved in ~/.git-credentials file.
+- When credentials storage is enabled, the first time you pull or push from the remote Git repository, you will be asked for a username and password, and they will be saved in ~/.git-credentials file.
+- During the next communications with the remote Git repository you won’t have to provide the username and password.
+- Each credential in ~/.git-credentials file is stored on its own line as a URL like: https://<USERNAME>:<PASSWORD>@github.com
 
-During the next communications with the remote Git repository you won’t have to provide the username and password.
-
-Each credential in ~/.git-credentials file is stored on its own line as a URL like:
-
-https://<USERNAME>:<PASSWORD>@github.com
 Config Username and Password for Different Repositories
-Sometimes you may need to use different accounts on the same Git server, for example your company’s corporate account on github.com and your private one.
-To be able to configure usernames and passwords for different Git repositories on the same Git server you can enable the useHttpPath option.
+- Sometimes you may need to use different accounts on the same Git server, for example your company’s corporate account on github.com and your private one.
+- To be able to configure usernames and passwords for different Git repositories on the same Git server you can enable the useHttpPath option.
+- By default, Git does not consider the “path” component of an http URL to be worth matching via external helpers. This means that a credential stored for https://example.com/foo.git will also be used for https://example.com/bar.git. If you do want to distinguish these cases, set useHttpPath option to true (source)
 
-By default, Git does not consider the “path” component of an http URL to be worth matching via external helpers. This means that a credential stored for https://example.com/foo.git will also be used for https://example.com/bar.git. If you do want to distinguish these cases, set useHttpPath option to true (source)
-
-Run the following commands to configure Git credentials storage and separate credentials for different repositories on github.com:
-
-$ git config --global credential.helper store
-$ git config --global credential.github.com.useHttpPath true
-The usernames and passwords for different GitHub repositories will be stored in ~/.git-credentials file separately on their own lines:
-
-https://<USERNAME>:<PASSWORD>@github.com/path/to/repo1.git
-https://<USERNAME>:<PASSWORD>@github.com/path/to/repo2.git
-Cool Tip: Create a new Git branch and checkout in one command! Read More →
+### Run the following commands to configure Git credentials storage and separate credentials for different repositories on github.com:
+    $ git config --global credential.helper store
+    $ git config --global credential.github.com.useHttpPath true
+- The usernames and passwords for different GitHub repositories will be stored in ~/.git-credentials file separately on their own lines:
+  https://<USERNAME>:<PASSWORD>@github.com/path/to/repo1.git
+  https://<USERNAME>:<PASSWORD>@github.com/path/to/repo2.git
  
- reference: https://www.shellhacks.com/git-config-username-password-store-credentials/
+ Refer full-log file 
+ [reference](https://www.shellhacks.com/git-config-username-password-store-credentials/)
  
- 
- Using ssh also you can access git
+ ### b)Configure credntials via ssh :
  $ssh-keygen
- $cat ~/.ssh/id_rsa.pub
- #copy the above content and place in github account (drop down menu ->settings - >SSH and GPG keys->New SSh Key(tiitle-any))
- 
- $git clone git@github.com:Nokku-Organization/CI-CD.git
-- use ssh link to clone the git-path
-
-- git config --global user.name "Your Name"
-- git config --global user.email you@example.com
+ $cat ~/.ssh/id_rsa.pub   //copy the above content and place in github account (drop down menu ->settings - >SSH and GPG keys->New SSh Key(tiitle-any))
+ $git clone git@github.com:Nokku-Organization/CI-CD.git  //use ssh link to clone the git-path
 
 
+### Configure username and email:
+- $ git config --global user.name "Your Name"
+- $ git config --global user.email you@example.com
 
-You need to remote server as using
-$git remote add origin https://github.com/Nokku-Organization/machine-learning.git
+### Configure remote server :
+- You need to add remote server as using
+- $ git remote add origin https://github.com/Nokku-Organization/machine-learning.git
 Note: Gives error in using git push, git pull if using in new repo initialised with README.md file. IN that case make use of "git pull origin master --allow-unrelated-histories"
 
 
-
-
+## Working with Project via git:
 - 2 ways of working with git
-2)or you can create entire new repo and work on
-1)you can clone it via fit-url ,with specific branch and make relaevant changes
+- a)you can create entire new repo and work on
+- b)you can clone it via git-url ,with specific branch and make relaevant changes
+### (This part-b is same as step-a but here we clone (using git clone url) and make changes and follow the rest as same
 
-For working with new-repo, above installion and configuration steps need to be taken care.
-Note : dont intialise repo with README.md file when creating repo via console
-Objectives
+Note:
+- For working with new-repo, above installion and configuration steps need to be taken care.
+- dont intialise repo with README.md file when creating repo via console
+
+### Objectives for below as pushing to master branch:
 - Initialise a 'webapi' repository
-- Create a README.md file with contents of "NEw development project-1"
+- Create a README.md file with contents of "New development project-1"
 - Add the file to 
 - commit the file with commit message
 - Finally push your changes to github
 
--$echo "NEw development project-1">README.md
-- $ git add README.md
-- $ git status
-- $ git commit -m "first commit"
-- $ git commit --amend --reset-author //you may fix the identity used for this commit with this command
-- $ Ggit pull origin master //refer above command for adding remote-origin.
-- $ gir puah origin master
+### Steps:
+    - $echo "New development project-1">README.md
+    - $ git add README.md
+    - $ git status
+    - $ git commit -m "first commit"
+    - $ git commit --amend --reset-author //you may fix the identity used for this commit with this command
+    - $ git pull origin master //refer above command for adding remote-origin.
+    - $ gir push origin master
 
 
 #detailed analysis of happening at beackend 
 
 
 
-branching and merging with git source contraol:
+### BRANCHING AND MERGING WITH GIT SOURCE CONTROL:
 - Using the abilty to branch the repo and make changes off the mainline is the biggest advantage pf using git
 - However eventually that branch will need to rejoin the master branch and you will need to perform merge.:
 
-Objective 
+### Objectives as dicussed below while working with branches: 
 - create a dev branch
 - correct the README.md file 
 - Merge the correct README,md file into master branch
 
-$ git branch //list of all branches present
-$ git branch dev //creates new branch
-$ git checkout dev //shifts the HEAD point to dev-branch
-$ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
-$ echo "branching">>README.md
-$ git add README.md
-$ git commit -am "second commit"
-$ git checkout master 
-$ git merger dev
-$ git push origin master
+### Working with branches:
+    $ git branch //list of all branches present
+    $ git branch dev //creates new branch
+    $ git checkout dev //shifts the HEAD point to dev-branch
+    $ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
+    $ echo "branching">>README.md
+    $ git add README.md
+    $ git commit -am "second commit"
+    $ git checkout master 
+    $ git merger dev
+    $ git push origin master
 
-Above Method is ok to achieve goal but not recommended. its better to push to dev-branch first and then raise pull-request for review to master branch.
-pull request can be done via console but found one document to automate but using this automation can be validated on personal coice.
-https://medium.com/mergify/managing-your-github-pull-request-from-the-command-line-89cb6af0a7fa
+- Above Method is ok to achieve goal but not recommended. its better to push to dev-branch first and then raise pull-request for review to master branch.
+- Pull request can be done via console but found one document to automate but using this automation can be validated on personal choice.
+  https://medium.com/mergify/managing-your-github-pull-request-from-the-command-line-89cb6af0a7fa
 
-So, the recommended process:
-
-$ git branch //list of all branches present
-$ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
-$ echo "branching">>README.md
-$ git add README.md
-$ git commit -am "second commit"
-$ git pull origin dev
-$ git push origin dev
-Then raise pull request from dev to master branch
-$ git checkout master
-$ git pull origin master
+### So, the recommended process:
+    $ git branch //list of all branches present
+    $ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
+    $ echo "branching">>README.md
+    $ git add README.md
+    $ git commit -am "second commit"
+    $ git pull origin dev
+    $ git push origin dev
+    Then raise pull request from dev to master branch
+    $ git checkout master
+    $ git pull origin master
 
  Sometimes its better to generate pull request (for review )to master branch from current branch instaed of directly merging
  
-
-
-
-
-
 
 ## Additional Content:
 - .gitignore
