@@ -68,18 +68,38 @@ Cool Tip: Create a new Git branch and checkout in one command! Read More →
  $git clone git@github.com:Nokku-Organization/CI-CD.git
 - use ssh link to clone the git-path
 
+- git config --global user.name "Your Name"
+- git config --global user.email you@example.com
+
+
+
+You need to remote server as using
+$git remote add origin https://github.com/Nokku-Organization/machine-learning.git
+Note: Gives error in using git push, git pull if using in new repo initialised with README.md file. IN that case make use of "git pull origin master --allow-unrelated-histories"
+
+
+
 
 - 2 ways of working with git
 2)or you can create entire new repo and work on
 1)you can clone it via fit-url ,with specific branch and make relaevant changes
 
 For working with new-repo, above installion and configuration steps need to be taken care.
+Note : dont intialise repo with README.md file when creating repo via console
 Objectives
 - Initialise a 'webapi' repository
 - Create a README.md file with contents of "NEw development project-1"
 - Add the file to 
 - commit the file with commit message
 - Finally push your changes to github
+
+-$echo "NEw development project-1">README.md
+- $ git add README.md
+- $ git status
+- $ git commit -m "first commit"
+- $ git commit --amend --reset-author //you may fix the identity used for this commit with this command
+- $ Ggit pull origin master //refer above command for adding remote-origin.
+- $ gir puah origin master
 
 
 #detailed analysis of happening at beackend 
@@ -91,10 +111,37 @@ branching and merging with git source contraol:
 - However eventually that branch will need to rejoin the master branch and you will need to perform merge.:
 
 Objective 
-- create a fixreadme branch
+- create a dev branch
 - correct the README.md file 
 - Merge the correct README,md file into master branch
 
+$ git branch //list of all branches present
+$ git branch dev //creates new branch
+$ git checkout dev //shifts the HEAD point to dev-branch
+$ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
+$ echo "branching">>README.md
+$ git add README.md
+$ git commit -am "second commit"
+$ git checkout master 
+$ git merger dev
+$ git push origin master
+
+Above Method is ok to achieve goal but not recommended. its better to push to dev-branch first and then raise pull-request for review to master branch.
+pull request can be done via console but found one document to automate but using this automation can be validated on personal coice.
+https://medium.com/mergify/managing-your-github-pull-request-from-the-command-line-89cb6af0a7fa
+
+So, the recommended process:
+
+$ git branch //list of all branches present
+$ git checkout -b dev //created new branch and shifts HEAD point to dev branch in one command
+$ echo "branching">>README.md
+$ git add README.md
+$ git commit -am "second commit"
+$ git pull origin dev
+$ git push origin dev
+Then raise pull request from dev to master branch
+$ git checkout master
+$ git pull origin master
 
  Sometimes its better to generate pull request (for review )to master branch from current branch instaed of directly merging
  
