@@ -66,6 +66,8 @@ Config Username and Password for Different Repositories
 - $ git remote add origin https://github.com/Nokku-Organization/machine-learning.git
 Note: Gives error in using git push, git pull if using in new repo initialised with README.md file. IN that case make use of "git pull origin master --allow-unrelated-histories"
 
+### Reference : https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/configuring-git.txt
+
 
 ## Working with Project via git:
 - 2 ways of working with git
@@ -101,6 +103,7 @@ Note:
 - "git push", this command pushes the changes/files from local repo to central-repo(repo present in github account)
 - While during "git pull", fetching and merging with central repo happens
 
+### Reference: https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/pushing-to-git-master-branch-complete-log.txt
 
 
 ### BRANCHING AND MERGING WITH GIT SOURCE CONTROL:
@@ -142,6 +145,7 @@ Note:
 
  Sometimes its better to generate pull request (for review )to master branch from current branch instaed of directly merging
  
+### Reference : https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/branching-complete-log.txt
 
 ## Additional Content:
 - .gitignore
