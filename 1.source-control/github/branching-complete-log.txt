@@ -1,0 +1,64 @@
+[ec2-user@ip-0-0-0-0]$ git branch dev
+-------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git branch
+  dev
+* master
+----------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git checkout dev
+Switched to branch 'dev'
+-------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+README.md  test10.txt  test1.txt  test3.txt  test4.txt  test7.txt  test8.tf  test9.txt  test.txt
+[ec2-user@ip-0-0-0-0]$ echo "edhkflke">test11.txt
+[ec2-user@ip-0-0-0-0]$ git add *
+[ec2-user@ip-0-0-0-0]$ git commit -m "ekdheqh"
+[dev 7fc8161] ekdheqh
+ Committer: EC2 Default User <ec2-user@ip-172-31-49-232.ec2.internal>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test11.txt
+-------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+README.md  test10.txt  test11.txt  test1.txt  test3.txt  test4.txt  test7.txt  test8.tf  test9.txt  test.txt
+--------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git checkout master
+Switched to branch 'master'
+----------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+README.md  test10.txt  test1.txt  test4.txt  test7.txt  test8.tf  test9.txt
+------------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git merge dev
+Merge made by the 'recursive' strategy.
+ test11.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test11.txt
+ ---------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ ls
+README.md  test10.txt  test11.txt  test1.txt  test4.txt  test7.txt  test8.tf  test9.txt
+-----------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git pull origin master
+From https://github.com/Nokku-Organization/machine-learning
+ * branch            master     -> FETCH_HEAD
+Already up-to-date.
+-----------------------------------------------------------------------------------------------------------
+[ec2-user@ip-0-0-0-0]$ git push origin master
+Counting objects: 5, done.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 530 bytes | 530.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+To https://github.com/Nokku-Organization/machine-learning.git
+   234ed7f..d4a3fd6  master -> master
+
+
+
