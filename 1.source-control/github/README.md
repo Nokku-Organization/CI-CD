@@ -21,11 +21,16 @@ For Debian/ubuntu :
 $ sudo apt-get update
 $ sudo apt-get install git
 
-Refer the above file for log.
+Refer the above file for log.( https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/installing-git-ec2-linux.txt )
 official-reference: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 
+After Installation , credentials need to be configured.
+Two ways to configure credentials i.e, via (username and password) or via ssh key configration
 
+Configure crentials Via Username and password:
+$ git config --global user.name "Emma Paris"
+$ git config --global user.email "eparis@atlassian.com"
 
 
 ## There are three areas:
