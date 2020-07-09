@@ -108,6 +108,31 @@ or add entry in the file as "ansiblehost1user         ALL=(ALL)       NOPASSWD: 
 
 ## Ansible-playbooks:
 
+[ansibleuser@ansible-control-node ansible-playbook-1]$ vim hostslist
+
+[ansibleuser@ansible-control-node ansible-playbook-1]$ vim site.yml
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: ensure latest apache
+    yum:
+     name: httpd
+     state: latest
+~
+
+
+[ansibleuser@ansible-control-node ansible-playbook-1]$ ls
+hostslist  site.yml
+
+[ansibleuser@ansible-control-node ansible-playbook-1]$ ansible-playbook -i hostslist site.yml
+
+
+Using roles:
+
+
+
+
 
 
 
