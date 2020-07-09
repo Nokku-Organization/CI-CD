@@ -100,10 +100,13 @@ Added the public key of control-node-ansible user here and in sg-rules also allo
 
 This automatically logged in to host-server. since id_rsa is present in ~/.ssh folder of control-node it is not asking password. but it is good practice if you delete id_rsa(private key) from server and keep it safely
 
-you can use ' echo "ansadmin ALL=(ALL) ALL" >> /etc/sudoers ' : for adding ansiblehostuser in host-server sudo users.
+
+-go to : sudo vim /etc/sudoers
+you can use ' echo "ansadmin ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ' : for adding ansiblehostuser in host-server sudo users.
+or add entry in the file as "ansiblehost1user         ALL=(ALL)       NOPASSWD: ALL"
 
 
-
+## Ansible-playbooks:
 
 
 
