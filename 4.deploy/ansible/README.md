@@ -31,6 +31,10 @@ Example:
 - There are a number of variables that may be used within the inventory to control how ansible connects to and interacts with target hosts.
 
 
+## Installation:
+you can use default ec2-keypair (generated and attached to ec2) in using ansible. In this case you don't need to add anything in the authorized file of host-server.
+
+But generally a specific user is created when using ansible . And its public key is copied in authorized-file of host-server.And via private key we will login.
 
 
       
