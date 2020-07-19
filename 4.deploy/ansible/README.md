@@ -142,3 +142,78 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/managing-users.html
 
 
 
+simple-ansible-project:
+
+[ansibleuser@ip-~]$ ls -R ansible-playbook-1
+ansible-playbook-1:
+hostslist  site.yml
+##########
+hostslist:
+ansiblehost1user@host-node-ip
+###
+site.yml:
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: ensure latest apache
+    yum:
+     name: httpd
+     state: latest
+
+
+---------------------------------------------
+using roles:
+[ansibleuser@ip- ~]$ ls -R ansible-playbook-role
+ansible-playbook-role:
+hostslist  roles  site.yml
+
+ansible-playbook-role/roles:
+apache-install
+
+ansible-playbook-role/roles/apache-install:
+defaults  files  handlers  meta  README.md  tasks  templates  tests  vars
+
+ansible-playbook-role/roles/apache-install/defaults:
+main.yml
+
+ansible-playbook-role/roles/apache-install/files:
+
+ansible-playbook-role/roles/apache-install/handlers:
+main.yml
+
+ansible-playbook-role/roles/apache-install/meta:
+main.yml
+
+ansible-playbook-role/roles/apache-install/tasks:
+main.yml
+
+ansible-playbook-role/roles/apache-install/templates:
+
+ansible-playbook-role/roles/apache-install/tests:
+inventory  test.yml
+
+ansible-playbook-role/roles/apache-install/vars:
+main.yml
+--------------------------
+###########################
+ansible-playbook-role/roles/apache-install/tasks:
+---
+- name: ensure latest apache
+  yum:
+   name: httpd
+   state: latest
+   
+site.yml:
+---
+- hosts: all
+  become: yes
+  roles:
+  - apache-install
+ 
+
+#######
+
+- ansible-galaxy init sampleRole
+- ansible-playbook -i hostslist site.yml
+
