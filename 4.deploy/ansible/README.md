@@ -64,7 +64,7 @@ Enter same passphrase again:
 Your identification has been saved in /home/ansibleuser/.ssh/id_rsa.
 Your public key has been saved in /home/ansibleuser/.ssh/id_rsa.pub.
 The key fingerprint is:
-SHA256:ezL9YDh1GQDxxf1rQ+SExosXhFeqjpXemduvwOZjlFk ansibleuser@ansible-control-node
+ansibleuser@ansible-control-node
 The key's randomart image is:
 +---[RSA 2048]----+
 |        oo..=oo. |
