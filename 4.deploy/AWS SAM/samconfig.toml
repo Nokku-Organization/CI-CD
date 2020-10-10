@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "sampleappdelete"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-pbh0xldduwar"
+s3_prefix = "sampleappdelete"
+region = "us-east-1"
+profile = "sample"
+confirm_changeset = false
+capabilities = "CAPABILITY_IAM"
