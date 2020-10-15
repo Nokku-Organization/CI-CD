@@ -1,6 +1,7 @@
 # CI-CD
 
 ## Devops
+
 Devops describes paradigm shift of an organization towards improved collabaration,communication,integration between software developers and IT operations
 
 Devops Principles:
