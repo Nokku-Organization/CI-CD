@@ -13,3 +13,5 @@ println is used for printing in groovy
       sh pwd
     } 
   is used for changing to a required folder.
+
+pipeline can be of stages
