@@ -24,6 +24,9 @@
 - Refer the above file for log.( https://github.com/Nokku-Organization/CI-CD/blob/master/1.source-control/github/installing-git-ec2-linux.txt )
 - official-reference: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
+### For windows:
+download from here and install
+https://git-scm.com/download/win
 
 ## After Installation , credentials need to be configured.
 - Two ways to configure credentials i.e, via (username and password) or via ssh key configration
